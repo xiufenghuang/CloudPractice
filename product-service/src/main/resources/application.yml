@@ -1,12 +1,2 @@
 server:
   port: ${product-service.port}
-
-spring:
-  application:
-    name: product-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        username: nacos
-        password: nacos

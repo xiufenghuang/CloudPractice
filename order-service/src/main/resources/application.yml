@@ -1,12 +1,5 @@
 server:
   port: ${order-service.port}
-
-spring:
-  application:
-    name: order-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        username: nacos
-        password: nacos
+ssy:
+  username: 松山院
+  site: www.ssy.top
