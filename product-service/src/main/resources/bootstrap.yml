@@ -6,6 +6,21 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: ${nacos.server-address}
-        group: ${nacos.group}
-        file-extension: ${nacos.file-extension}
+#        server-addr: ${nacos.server-address}
+#        group: ${nacos.group}
+#        file-extension: ${nacos.file-extension}
+#        username: ${nacos.username}
+#        password: ${nacos.password}
+        server-addr: localhost:8844
+        group: ssy
+        file-extension: yaml
+        username: nacos
+        password: nacos
+        shared-configs:
+          - dataId: common-service-${spring.profiles.active}.yaml
+            group: ${nacos.group}
+            refresh: true
+#        shared-configs:
+#          - dataId: cipher-aes-common-service-${spring.profiles.active}.yaml
+#            group: ssy
+#            refresh: true

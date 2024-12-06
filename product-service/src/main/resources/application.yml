@@ -1,2 +1,9 @@
 server:
-  port: ${product-service.port}
+  port: 8031
+spring:
+  cloud:
+    sentinel:
+      transport:
+        port: ${sentinel.transport.port.user-service}
+#        port: 8010
+        dashboard: localhost:8888

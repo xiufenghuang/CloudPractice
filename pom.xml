@@ -22,6 +22,7 @@
         <module>user-service</module>
         <module>order-service</module>
         <module>product-service</module>
+        <module>gateway-service</module>
     </modules>
 
     <properties>
@@ -36,6 +37,7 @@
     <spring-cloud-starter-bootstrap.version>3.1.4</spring-cloud-starter-bootstrap.version>
     <feign-hc5.version>13.0</feign-hc5.version>
     <jjwt.version>0.11.5</jjwt.version>
+        <nacos-aes-encryption-plugin.version>1.0.0-SNAPSH0T</nacos-aes-encryption-plugin.version>
     </properties>
 
     <dependencyManagement>
