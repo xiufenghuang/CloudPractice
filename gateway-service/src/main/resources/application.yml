@@ -1,0 +1,6 @@
+server:
+  port: ${gateway-service.port}
+
+spring:
+  profiles:
+    active: dev

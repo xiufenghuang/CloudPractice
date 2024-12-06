@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    gateway:
+      discover:
+        locator:
+          enabled: true
+      routes:
+        - id: order_route
+          order: 1
+          uri: lb://order-service
+          predicates:
+            - Path=/order/service/**
+#            - Method=POST
+#            - Before=2025-11-26T00:00:00.000+08:00[Asia/Shanghai]
+          filters:
+            - StripPrefix=2
+#            - InvalidParameter=token,-1
+        - id: product
+          order: 1
+          uri: lb://product-service
+          predicates:
+            - Path=/product-service/**
+          filters:
+            - StripPrefix=1
+    sentinel:
+      filter:
+        enabled: false
+      transport:
+        port: ${sentinel.transport.port.gateway-service}
+        dashboard: ${sentinel.transport.dashboard}
+      scg:
+        fallback:
+          mode: response
+          response-status: 500
+          response-body: '{"code": 500, "msg": "网关流量超量！"}'
+
